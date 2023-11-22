@@ -1,0 +1,49 @@
+body {
+    background-color: rgb(66, 66, 66);
+}
+
+main {
+    display: grid;
+    grid-template-columns: .2fr [content-start] .8fr [content-end] .2fr;
+    grid-template-rows: 1fr [content2-start] 1fr [content2-end] 1fr;
+}
+
+section{
+    grid-column: content;
+    grid-row: content2;
+}
+
+
+/* INPUT INFORMATION STYLE STARTS HERE */
+.ypev-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.ypev-message {
+    text-align: center;
+    color: #eee;
+    border: 1px solid #eee;
+}
+
+#user-input {
+    font-size: 20px;
+    text-align: center;
+    margin: 1em auto;
+    width: 75%;
+    height: 40px;
+    border-radius: 10px;
+}
+
+#validateBtn {
+    border-radius: 8px;
+    margin: 1em auto;
+    width: 50%;
+    height: 30px;
+}
+/* INPUT INFORMATION STYLE ENDS HERE */
+
+/* RESULT INFORMATION STYLE STARTS HERE */
+
+/* RESULT INFORMATION STYLE ENDS HERE */
