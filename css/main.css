@@ -1,17 +1,44 @@
 body {
     background-color: rgb(66, 66, 66);
+    max-width: 1920px;
+    max-height: 1080px;
 }
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Cinzel', serif;
+}
+
+p, li, header, footer {
+    font-family: 'Kanit', sans-serif;
+}
+
+/* HEADER STYLE STARTS HERE */
+header {
+    list-style-type: none;
+    
+    
+}
+
+header nav li a{
+    font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    color: #eee;
+    text-decoration: none;
+}
+/* HEADER STYLE ENDS HERE */
 
 main {
     display: grid;
-    grid-template-columns: .2fr [content-start] .8fr [content-end] .2fr;
-    grid-template-rows: 1fr [content2-start] 1fr [content2-end] 1fr;
+    grid-template-columns: [overall-start].2fr [content-start] .8fr [content-end] .2fr [overall-end];
+    grid-template-rows: .1fr [content2-start] .8fr [content2-end] .1fr;
 }
 
 section{
     grid-column: content;
     grid-row: content2;
 }
+
 
 
 /* INPUT INFORMATION STYLE STARTS HERE */
@@ -22,9 +49,18 @@ section{
 }
 
 .ypev-message {
+    margin: 0 auto;
     text-align: center;
     color: #eee;
     border: 1px solid #eee;
+    border-radius: 10px;
+    width: 75%;
+    padding: 2em;
+}
+
+#ypevForm {
+    display: flex;
+    flex-direction: column;
 }
 
 #user-input {
@@ -37,13 +73,67 @@ section{
 }
 
 #validateBtn {
+    font-family: 'Cinzel', serif;
+    font-size: 36px;
     border-radius: 8px;
-    margin: 1em auto;
-    width: 50%;
-    height: 30px;
+    margin: .1em auto;
+    width: 30%;
 }
 /* INPUT INFORMATION STYLE ENDS HERE */
 
 /* RESULT INFORMATION STYLE STARTS HERE */
 
+.result-container {
+    display: grid;
+    grid-template-columns: [overall-start].2fr [content-start] .2fr [inner-start] .4fr [inner-end] .2fr  [content-end] .2fr [overall-end];
+    grid-template-rows: .1fr [row2-start] .2fr[row3-start] .4fr [row3-end] .2fr[row2-end] .1fr;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    opacity: 90%;
+}
+
+.ypev-result {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2em;
+    width: 100%;
+    border: 1px solid rgba(255,255,255,.5);
+    position: relative;
+    grid-column: inner;
+    grid-row: row3;
+    z-index: 999999;
+    color: #eee;
+}
+
+#validateAgain {
+    font-family: 'Cinzel', serif;
+    font-size: 36px;
+    width: 70%;
+    margin: 1em auto;
+}
+
 /* RESULT INFORMATION STYLE ENDS HERE */
+
+/* FOOTER STYLE STARTS HERE */
+footer {
+    display: grid;
+    grid-template-columns: [overall-start] .2fr [inner-start].6fr[inner-end] .2fr [overall-end];
+}
+
+footer hr {
+    width: 100%;
+    grid-column: overall;
+}
+
+footer p {
+    color: #eee;
+    grid-column: inner;
+    margin: 0 auto;
+}
+/* FOOTER STYLE ENDS HERE */

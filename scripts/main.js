@@ -1,3 +1,4 @@
-import { validateButton } from "./utils.mjs";
+import { loadHeaderFooter, validateButton } from "./utils.mjs";
 
 validateButton();
+loadHeaderFooter();
