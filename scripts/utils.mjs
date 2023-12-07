@@ -40,8 +40,12 @@ export function showResult(){
     const emailPlaceHolder = document.querySelector('#email-placeholder');
     const resultPlaceHolder = document.querySelector('#result-placeholder');
     const resultDetails = document.querySelector('.result-details');
+    const button = document.querySelector('#validateAgain');
 
     emailPlaceHolder.textContent = sessionStorage.getItem('inputEmail');
+
+    document.body.style.backgroundColor = `${localStorage.getItem('userColor')}`;
+    button.style.color = `${localStorage.getItem('userColor')}`;
     
     if ((sessionStorage.getItem('deliverability') === 'DELIVERABLE')) {
         resultPlaceHolder.textContent = "DELIVERABLE";
@@ -76,6 +80,7 @@ export async function loadHeaderFooter(){
     footerTag.innerHTML = await footerTemplate();
 
     updateDates();
+    bgColorSwitch();
 
 }
 
@@ -109,5 +114,16 @@ function updateDates() {
     }
 
     localStorage.setItem('lastVisitStamp', currentDate);
+}
+
+function bgColorSwitch(){
+    const colorSwatch = document.querySelector('.colorSwatch');
+    const button = document.querySelector('#validateBtn');
+
+    colorSwatch.oninput = () => {
+        document.body.style.backgroundColor = colorSwatch.value;
+        button.style.color = colorSwatch.value;
+        localStorage.setItem('userColor', `${colorSwatch.value}`);
+    } 
 }
 
